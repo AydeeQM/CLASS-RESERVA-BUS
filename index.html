@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body align='center' style="background-color:pink;">
+    <h1>RESERVAR BUS</h1>
+    <div id="tablero"></div>
+    <br>
+    <div id="mostrar"></div>
+    <div class="container">
+        <p>
+            DNI: <input type="number" name="numdni" id="dni">
+            <button type="button" id="buscar">Buscar</button>
+        </p>
+    </div>
+    <div class="container" align="center">
+        <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+        <br>
+        <br>
+        <input type="text" placeholder="Apellido" name="apellido" id="apell" required>
+        <br>
+        <br>
+        <input type="number" placeholder="DNI" name="eldni" id="eldni" required>
+    </div>
+    <br>
+    <button id="agregar" type="button" name="button">Reservar</button>
+    <button type="button" id="consulta" name="button">ok</button>
+    <button type="button" id="cancela">Cancelar</button>
+    <br>
+    <br>
+    <button id="print" type="button" name="button">Listar</button>
+    <div id="lista"></div>
+    <script src="asset/js/main.js"></script>
+</body>
+
+</html>
