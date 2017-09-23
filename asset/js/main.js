@@ -12,7 +12,7 @@ class Reserve {
         let col = this.numSeat / this.row;
         let passage = '';
         let table = "";
-        table += "<table class='celda' border='5' cellpadding='10' cellpadding='10' cellspacing='5' align='center' bordercolor='blue'>";
+        table += "<table class='table table-bordered text-center'>";
         for (let i = 1; i <= this.row; i++) {
             table += "<tr>";
             let group_seat = i;
@@ -74,7 +74,7 @@ class Reserve {
         });
     }
 
-    printList() {
+    searchList() {
         $('#buscar').click(() => {
             let id_dni = parseInt($('#dni').val());
             $.grep(this.passengers, (value, index) => {
@@ -83,6 +83,17 @@ class Reserve {
                     $("#apell").val(this.passengers[index].Apellido);
                     $("#eldni").val(this.passengers[index].Dni);
                 }
+            });
+        });
+    }
+
+    print_All() {
+        $('#print').click(() => {
+            $.grep(this.passengers, (value, index) => {
+                $("#lista").append(`Asiento N°: ${this.passengers[index].Item}<br>\
+                                Nombre: ${this.passengers[index].Nombre}<br>\
+                                Apellido: ${this.passengers[index].Apellido}<br>\
+                                DNI N°: ${this.passengers[index].Dni}<br><br>`);
             });
         });
     }
@@ -119,7 +130,8 @@ let bus_Reserve = new Reserve(32, 4);
 bus_Reserve.renderSeat();
 bus_Reserve.inboxUser();
 bus_Reserve.addUser();
-bus_Reserve.printList();
+bus_Reserve.searchList();
+bus_Reserve.print_All();
 bus_Reserve.cancelSeat();
 bus_Reserve.consulUser();
 

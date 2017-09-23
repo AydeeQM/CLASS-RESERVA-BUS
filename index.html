@@ -3,38 +3,89 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUS RESERVE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body align='center' style="background-color:pink;">
-    <h1>RESERVAR BUS</h1>
-    <div id="tablero"></div>
-    <br>
-    <div id="mostrar"></div>
-    <div class="container">
-        <p>
-            DNI: <input type="number" name="numdni" id="dni">
-            <button type="button" id="buscar">Buscar</button>
-        </p>
+<body>
+    <div class="container-fluid">
+        <h1 class=" page-header text-center">RESERVAR BUS</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                        <div id="tablero"></div>
+                        <br>
+                        <div id="mostrar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                DNI N°
+                            </div>
+                            <input class="form-control" id="buscar" name="numdni" type="number" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" id="buscar">Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                Nombre
+                            </div>
+                            <input class="form-control" type="text" placeholder="Nombre" name="nombre" id="nombre" required/>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                Apellido
+                            </div>
+                            <input class="form-control" type="text" placeholder="Apellido" name="apellido" id="apell" required/>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            DNI N°
+                            </div>
+                            <input class="form-control" type="number" placeholder="DNI" name="eldni" id="eldni" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-success" id="agregar" name="button">Reservar</button>
+                    <button type="button" class="btn btn-success" id="print" name="button">Listar</button>
+                    <button type="button" class="btn btn-danger" id="cancela">Cancelar</button>
+                    <button type="button" class="btn btn-info" id="consulta" name="button">ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="lista"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container" align="center">
-        <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
-        <br>
-        <br>
-        <input type="text" placeholder="Apellido" name="apellido" id="apell" required>
-        <br>
-        <br>
-        <input type="number" placeholder="DNI" name="eldni" id="eldni" required>
-    </div>
-    <br>
-    <button id="agregar" type="button" name="button">Reservar</button>
-    <button type="button" id="consulta" name="button">ok</button>
-    <button type="button" id="cancela">Cancelar</button>
-    <br>
-    <br>
-    <button id="print" type="button" name="button">Listar</button>
-    <div id="lista"></div>
     <script src="asset/js/main.js"></script>
 </body>
 
